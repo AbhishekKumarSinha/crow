@@ -14,7 +14,7 @@ sudo apt install curl
 To complie the program GNU C++ compiler g++ can be used as shown below in terminal.
 
 ```bash
-g++ main.cpp -o prog -std=C++17 -lpthread -lboost_system
+g++ main.cpp -o prog -lpthread -lboost_system -std=c++17
 ```
 To run the program in Linux system like Ubuntu execute as shown below.
 
