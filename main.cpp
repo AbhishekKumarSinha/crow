@@ -1,5 +1,5 @@
 #define CROW_MAIN
-#include "crow_all.h"
+#include "inc/crow_all.h"
 
 #include<iostream>
 
