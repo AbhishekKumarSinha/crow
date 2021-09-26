@@ -4,6 +4,14 @@ Creating ReST Framework Example using Crow.
 ## Environment Setup
 Below envivornment needs to be set to test this project on Ubuntu 20.04 LTS.
 
+Required components are :
+- build-essential
+  - g++
+- boost
+- curl
+- crow_all.h      _-->This is included in the inc folder of this project._
+
+
 ```bash
 sudo apt install build-essential libboost-all-dev
 sudo apt install curl
