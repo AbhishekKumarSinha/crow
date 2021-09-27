@@ -1,5 +1,6 @@
 #define CROW_MAIN
 #include "inc/crow_all.h"
+#include "inc/system.h"
 
 #include<iostream>
 #include<string>
@@ -11,6 +12,8 @@ int main()
     cout << "ReST Framework Example Using Crow" << endl;
 
     crow::SimpleApp app;
+
+    System::get_instance(); //lazy-initialization
 
     CROW_ROUTE(app, "/")
     ([](){
@@ -29,6 +32,13 @@ int main()
         //password
         const string password = recvd_json["password"].s();
 
+        if(System::get_instance()->check_username_availability(username))
+        {
+            return crow::response(400);   
+        }
+
+
+        System::get_instance()->signup(username, password);
         
         string reponse_json = "Hello " + username + ", your password is :: " + password;
         return crow::response(reponse_json);//"Hello " + ", your password is :: " ;
