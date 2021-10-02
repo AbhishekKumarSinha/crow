@@ -44,5 +44,27 @@ int main()
         return crow::response(reponse_json);//"Hello " + ", your password is :: " ;
     });
 
+
+    CROW_ROUTE(app, "/login").methods(crow::HTTPMethod::POST)
+    ([](const crow::request& req){
+
+        auto recvd_json = crow::json::load(req.body);
+        if (!recvd_json)
+            return crow::response(400);
+
+        //username
+        const string username =  recvd_json["username"].s();
+        //password
+        const string password = recvd_json["password"].s();
+
+        if(System::get_instance()->check_login_credentials(username,password))
+            return crow::response(200);
+        else
+            return crow::response(400); 
+
+    });
+
+
+
     app.port(18080).multithreaded().run();
 }

@@ -27,3 +27,8 @@ bool System::check_username_availability(string username)
 {
 	return (accounts.count(username));
 }
+
+bool System::check_login_credentials(string username, string password)
+{
+	return (password == accounts[username]);
+}

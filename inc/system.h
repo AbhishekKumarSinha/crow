@@ -13,6 +13,7 @@ public:
 	static System* get_instance();
 	bool signup(string username, string password);
 	bool check_username_availability(string username);
+	bool check_login_credentials(string username, string password);
 private:
 	System();
 	System(const System& rhs) = delete;
