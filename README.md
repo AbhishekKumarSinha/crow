@@ -33,17 +33,17 @@ To run the program in Linux system like Ubuntu execute as shown below.
 ## Testing using cURL
 Below mentioned ReST API can be tested.
 
-#####GET
+###### GET
 ```bash
 curl -H "Content-Type: application/json" -X GET http://localhost:18080
 ```
 
-#####POST /signup
+###### POST /signup
 ```bash
 curl -H "Content-Type: application/json" -X POST -d '{"username":"abhishek","password":"sinha"}' http://localhost:18080/signup
 ```
 
-#####POST /login
+###### POST /login
 ```bash
 curl -v -H "Content-Type: application/json" -X POST -d '{"username":"abhishek","password":"sinha"}' http://localhost:18080/login
 ```
