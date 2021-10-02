@@ -38,9 +38,14 @@ GET
 curl -H "Content-Type: application/json" -X GET http://localhost:18080
 ```
 
-POST
+POST /signup
 ```bash
-curl -H "Content-Type: application/json" -X POST -d '{"username":"mkyong","password":"abc"}' http://localhost:18080/signup
+curl -H "Content-Type: application/json" -X POST -d '{"username":"abhishek","password":"sinha"}' http://localhost:18080/signup
+```
+
+POST /login
+```bash
+curl -v -H "Content-Type: application/json" -X POST -d '{"username":"abhishek","password":"sinha"}' http://localhost:18080/login
 ```
 
 ## License
