@@ -14,12 +14,14 @@ public:
 	bool signup(string username, string password);
 	bool check_username_availability(string username);
 	bool check_login_credentials(string username, string password);
+	void set_login_status(string username, bool status);
 private:
 	System();
 	System(const System& rhs) = delete;
 	static System* instance;
 
 	unordered_map<string,string> accounts;
+	unordered_map<string,bool> login_status;
 };
 
 #endif

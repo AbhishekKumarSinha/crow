@@ -32,3 +32,8 @@ bool System::check_login_credentials(string username, string password)
 {
 	return (password == accounts[username]);
 }
+
+void System::set_login_status(string username, bool status)
+{
+	login_status[username] = status;
+}

@@ -58,7 +58,11 @@ int main()
         const string password = recvd_json["password"].s();
 
         if(System::get_instance()->check_login_credentials(username,password))
+        {
+            System::get_instance()->set_login_status(username,true);
+
             return crow::response(200);
+        }
         else
             return crow::response(400); 
 
