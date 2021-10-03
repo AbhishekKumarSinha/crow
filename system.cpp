@@ -25,12 +25,21 @@ bool System::signup(string username, string password)
 
 bool System::check_username_availability(string username)
 {
+	cout << "COUNT :: " << accounts.count(username) << endl;
 	return (accounts.count(username));
 }
 
 bool System::check_login_credentials(string username, string password)
 {
-	return (password == accounts[username]);
+	bool status = false;
+	try 
+	{
+    	status = (accounts.at(username) == password);      // vector::at throws an out-of-range
+  	}
+  	catch (const std::out_of_range& oor) {
+    	std::cerr << "Out of Range error: " << oor.what() << '\n';
+  	}
+	return status;
 }
 
 void System::set_login_status(string username, bool status)

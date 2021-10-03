@@ -34,6 +34,7 @@ int main()
 
         if(System::get_instance()->check_username_availability(username))
         {
+            cout << " :: 400 :: " << endl;
             return crow::response(400);   
         }
 
