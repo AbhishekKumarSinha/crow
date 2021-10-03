@@ -49,6 +49,9 @@ curl -v -H "Content-Type: application/json" -X POST -d '{"username":"abhishek","
 ```
 
 Upcoming API
+###### POST /deposit
+
+
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
