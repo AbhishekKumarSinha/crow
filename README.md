@@ -56,7 +56,7 @@ curl -v -H "Content-Type: application/json" -X POST -d '{"username":"abhishek","
 
 ###### PUT /withdraw
 ```bash
-curl -v -H "Content-Type: application/json" -X POST -d '{"amount":1000}' http://localhost:18080/withdraw
+curl -v -H "Content-Type: application/json" -X POST -d '{"username":"abhishek","amount":1000}' http://localhost:18080/withdraw
 ```
 
 
