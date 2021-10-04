@@ -51,7 +51,7 @@ curl -v -H "Content-Type: application/json" -X POST -d '{"username":"abhishek","
 Upcoming API
 ###### POST /deposit
 ```bash
-curl -v -H "Content-Type: application/json" -X POST -d '{"amount":1000}' http://localhost:18080/deposit
+curl -v -H "Content-Type: application/json" -X POST -d '{"username":"abhishek","amount":1000}' http://localhost:18080/deposit
 ```
 
 ###### PUT /withdraw
