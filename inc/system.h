@@ -15,6 +15,7 @@ public:
 	bool check_username_availability(string username);
 	bool check_login_credentials(string username, string password);
 	void set_login_status(string username, bool status);
+	int get_current_balance(string username);
 private:
 	System();
 	System(const System& rhs) = delete;
@@ -22,6 +23,7 @@ private:
 
 	unordered_map<string,string> accounts;
 	unordered_map<string,bool> login_status;
+	unordered_map<string,int> user_balance;
 };
 
 #endif

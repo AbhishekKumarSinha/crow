@@ -46,3 +46,16 @@ void System::set_login_status(string username, bool status)
 {
 	login_status[username] = status;
 }
+
+int System::get_current_balance(string username)
+{
+	try
+	{
+		int balance = user_balance.at(username);
+		return balance;
+	}
+	catch(exception& e)
+	{
+		return -1;
+	}
+}
