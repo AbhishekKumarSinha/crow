@@ -17,6 +17,7 @@ public:
 	void set_login_status(string username, bool status);
 	bool get_login_status(string username);
 	int get_current_balance(string username);
+	bool deposit_money(string username, int amt);
 private:
 	System();
 	System(const System& rhs) = delete;

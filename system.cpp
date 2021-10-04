@@ -56,7 +56,7 @@ int System::get_current_balance(string username)
 	}
 	catch(exception& e)
 	{
-		return -1;
+		return 0;
 	}
 }
 
@@ -67,6 +67,19 @@ bool System:: get_login_status(string username)
 	{
 		bool status = login_status.at(username);
 		return status;
+	}
+	catch(exception& e)
+	{
+		return false;
+	}
+}
+
+bool System::deposit_money(string username, int amt)
+{
+	try
+	{
+		user_balance[username] = amt + get_current_balance(username);
+		return true;
 	}
 	catch(exception& e)
 	{

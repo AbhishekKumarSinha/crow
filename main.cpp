@@ -84,6 +84,7 @@ int main()
 
         if(System::get_instance()->get_login_status(username))
         {
+            System::get_instance()->deposit_money(username,deposit);
             return crow::response(200);
         }
         else
