@@ -70,6 +70,28 @@ int main()
     });
 
 
+    CROW_ROUTE(app, "/deposit").methods(crow::HTTPMethod::POST)
+    ([](const crow::request& req){
+
+        auto recvd_json = crow::json::load(req.body);
+        if (!recvd_json)
+            return crow::response(400);
+
+        //username
+        const string username =  recvd_json["username"].s();
+        //password
+        const int deposit = recvd_json["amount"].i();
+
+        if(System::get_instance()->get_login_status(username))
+        {
+            return crow::response(200);
+        }
+        else
+            return crow::response(403); 
+
+    });
+
+
 
     app.port(18080).multithreaded().run();
 }

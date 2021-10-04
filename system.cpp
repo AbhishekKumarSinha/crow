@@ -59,3 +59,17 @@ int System::get_current_balance(string username)
 		return -1;
 	}
 }
+
+
+bool System:: get_login_status(string username)
+{
+	try
+	{
+		bool status = login_status.at(username);
+		return status;
+	}
+	catch(exception& e)
+	{
+		return false;
+	}
+}

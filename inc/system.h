@@ -15,6 +15,7 @@ public:
 	bool check_username_availability(string username);
 	bool check_login_credentials(string username, string password);
 	void set_login_status(string username, bool status);
+	bool get_login_status(string username);
 	int get_current_balance(string username);
 private:
 	System();
